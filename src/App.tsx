@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
-
+import { fetchExchange } from "./api";
+import styled from "styled-components";
 interface Change {
   result: number;
   cur_unit: string;
@@ -15,43 +16,58 @@ interface Change {
   cur_nm: string;
 }
 
-const fetchExchange = async () => {
-  const auth = "FgYNZJ7yTBdsSsUAMTxqGaBP0wNkwGsR";
-  const data = await (
-    await fetch(
-      `/site/program/financial/exchangeJSON?authkey=${auth}&data=AP01`
-    )
-  ).json();
-
-  return data;
-};
+const Display = styled.div``;
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+const Title = styled.h1``;
+const Today = styled.span`
+  font-size: 20px;
+`;
+const Country = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 20px;
+  background-color: #e1b12c;
+  box-shadow: 5px 5px 5px black;
+`;
 
 function App() {
-  const { isLoading, data } = useQuery<Change[]>("exchange", fetchExchange);
-  const [value, setValue] = useState("");
-  const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setValue(event.currentTarget.value);
-  };
-
+  const { isLoading, data } = useQuery<Change[]>("exchange", fetchExchange, {
+    refetchInterval: 10000,
+  });
+  const today = new Date();
   return (
     <>
       {isLoading ? (
         <h1>Loading</h1>
       ) : (
         <>
-          <div>
-            <label htmlFor="exchange">통화명 </label>
-            <select name="countries1" id="exchange1" onChange={onChange}>
+          <Container>
+            <Title>현재 환율 정보</Title>
+            <Today>기준일 {today.toUTCString()}</Today>
+            <Display>
               {data?.map((data) => (
-                <option key={data.cur_nm} value={data.bkpr}>
-                  {data.cur_nm} {data.cur_unit}
-                </option>
+                <Country>
+                  <span>
+                    통화명: {data.cur_nm} {data.cur_unit}
+                  </span>
+                  <span>매매기준율: {data.deal_bas_r} ₩</span>
+                  <span>송금받을때: {data.ttb} ₩</span>
+                  <span>송금보낼때: {data.tts} ₩</span>
+                </Country>
               ))}
-            </select>
-          </div>
-          <div>
-            <h2>첫번째국가: {value}</h2>
-          </div>
+            </Display>
+          </Container>
         </>
       )}
     </>

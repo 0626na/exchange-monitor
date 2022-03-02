@@ -16,6 +16,7 @@
     "react-query": "^3.34.16",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
@@ -43,5 +44,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://www.koreaexim.go.kr/"
+  "proxy": "https://www.koreaexim.go.kr/",
+  "devDependencies": {
+    "@types/styled-components": "^5.1.24"
+  }
 }
