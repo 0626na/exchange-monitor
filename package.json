@@ -48,7 +48,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://reactproxyserver.herokuapp.com/",
+  "proxy": "https://reactproxyserver.herokuapp.com/https://www.koreaexim.go.kr/",
   "devDependencies": {
     "@types/styled-components": "^5.1.24"
   },
