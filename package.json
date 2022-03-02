@@ -10,6 +10,7 @@
     "@types/node": "^16.11.25",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "gh-pages": "^3.2.3",
     "http-proxy-middleware": "^2.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -24,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -47,5 +50,6 @@
   "proxy": "https://www.koreaexim.go.kr/",
   "devDependencies": {
     "@types/styled-components": "^5.1.24"
-  }
+  },
+  "homepage": "https://cors.bridged.cc/https://0626na.github.io/exchange-monitor"
 }

@@ -49,7 +49,9 @@ function App() {
   return (
     <>
       {isLoading ? (
-        <h1>Loading</h1>
+        <Container>
+          <h1>Loading...</h1>
+        </Container>
       ) : (
         <>
           <Container>

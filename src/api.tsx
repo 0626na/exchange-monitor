@@ -5,6 +5,6 @@ export const fetchExchange = async () => {
       `/site/program/financial/exchangeJSON?authkey=${auth}&data=AP01`
     )
   ).json();
-
+  console.log(data);
   return data;
 };
