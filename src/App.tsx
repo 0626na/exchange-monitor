@@ -42,9 +42,7 @@ const Country = styled.div`
 `;
 
 function App() {
-  const { isLoading, data } = useQuery<Change[]>("exchange", fetchExchange, {
-    refetchInterval: 10000,
-  });
+  const { isLoading, data } = useQuery<Change[]>("exchange", fetchExchange);
   const today = new Date();
   return (
     <>
