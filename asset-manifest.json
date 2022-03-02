@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/exchange-monitor/static/css/main.9d8dcc64.css",
-    "main.js": "/exchange-monitor/static/js/main.fd2cb749.js",
-    "index.html": "/exchange-monitor/index.html",
-    "main.9d8dcc64.css.map": "/exchange-monitor/static/css/main.9d8dcc64.css.map",
-    "main.fd2cb749.js.map": "/exchange-monitor/static/js/main.fd2cb749.js.map"
+    "main.css": "/https://0626na.github.io/exchange-monitor/static/css/main.9d8dcc64.css",
+    "main.js": "/https://0626na.github.io/exchange-monitor/static/js/main.7b44c55a.js",
+    "index.html": "/https://0626na.github.io/exchange-monitor/index.html",
+    "main.9d8dcc64.css.map": "/https://0626na.github.io/exchange-monitor/static/css/main.9d8dcc64.css.map",
+    "main.7b44c55a.js.map": "/https://0626na.github.io/exchange-monitor/static/js/main.7b44c55a.js.map"
   },
   "entrypoints": [
     "static/css/main.9d8dcc64.css",
-    "static/js/main.fd2cb749.js"
+    "static/js/main.7b44c55a.js"
   ]
 }
